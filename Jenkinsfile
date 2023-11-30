@@ -3,15 +3,7 @@ pipeline {
     triggers {
     pollSCM('* * * * *')
     }
-    post {
-always {
-mail to: 'majidlearning7@gmail.com',
-subject: "Completed Pipeline: ${currentBuild.
-fullDisplayName}",
-body: "Your build completed, please check: ${env.
-BUILD_URL}"
-}
-}
+    
     stages {
         
         stage("Compilation") {
@@ -48,5 +40,13 @@ stage("Analyse statique du code") {
            }
         }
     }
-                
+   post {
+        always {
+            emailext (
+                subject: "Notification de construction Jenkins",
+                body: "La construction Jenkins est ${currentBuild.result}",
+                to: "majidlearning7@gmail.com",
+            )
+        }
+    }             
 }
