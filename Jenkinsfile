@@ -43,8 +43,8 @@ stage("Analyse statique du code") {
     post {
 always {
 mail to: 'majidlearning7@gmail.com',
-subject: "Completed Pipeline: ${currentBuild.fullDisplayName}",
-body: "Your build completed, please check: ${env.BUILD_URL}"
+subject: "Cher lion Votre compilation est terminée: ${currentBuild.fullDisplayName}",
+body: " Votre build est accompli, Veuilez vérifier: ${env.BUILD_URL}"
 }
 }
    
