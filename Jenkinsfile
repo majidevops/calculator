@@ -1,7 +1,6 @@
 pipeline {
     agent any
-    triggers {
-    pollSCM('* * * * *')
+    
     }
     
     stages {
@@ -41,13 +40,5 @@ stage("Analyse statique du code") {
         }
     }
    
-    post {
-always {
-mail to: 'majidlearning7@gmail.com',
-subject: "Completed Pipeline: ${currentBuild.
-fullDisplayName}",
-body: "Your build completed, please check: ${env.
-BUILD_URL}"
-}
-}             
+    
 }
