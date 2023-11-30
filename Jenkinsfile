@@ -28,7 +28,7 @@ reportName: "JaCoCo Report"
 sh "./gradlew jacocoTestCoverageVerification"
 }
 }
-stage("Analyse statistique du code") {
+stage("Analyse statique du code") {
       steps {
            sh "./gradlew checkstyleMain"
            publishHTML (target: [
