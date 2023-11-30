@@ -1,9 +1,7 @@
 pipeline {
     agent any
-    
-    }
-    
-    stages {
+      
+      stages {
         
         stage("Compilation") {
             steps {
@@ -40,5 +38,5 @@ stage("Analyse statique du code") {
         }
     }
    
-    
-}
+  }  
+
