@@ -39,24 +39,6 @@ stage("Analyse statique du code") {
 ])
            }
         }
-stage("Package") {
-    steps {
-        sh "./gradlew build"
-        
-    }
-}
-stage("Docker build") {
-    steps {
-        sh "docker build -t localhost:5000/calculator ."
-        
-    }
-}
-stage("Docker push") {
-    steps {
-sh "docker push localhost:5000/calculator"
-    }
- }
-        
     }
     post {
 always {
@@ -67,4 +49,3 @@ body: " Votre build est accompli, Veuilez vérifier: ${env.BUILD_URL}"
 }
    
   }  
-
